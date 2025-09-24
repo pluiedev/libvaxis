@@ -33,8 +33,6 @@ pub const PosixTty = struct {
     /// The file descriptor of the tty
     fd: posix.fd_t,
 
-    reader: std.fs.File.Reader,
-
     /// File.Writer for efficient buffered writing
     writer: std.fs.File.Writer,
 
@@ -200,7 +198,6 @@ pub const WindowsTty = struct {
     buf: [4]u8 = undefined,
 
     /// File.Writer for efficient buffered writing
-    reader: std.fs.File.Writer,
     writer: std.fs.File.Writer,
 
     /// The last mouse button that was pressed. We store the previous state of button presses on each
